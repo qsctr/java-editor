@@ -26,4 +26,5 @@ onerror = (msg, url, line, col, err) => {
     dialog.querySelector('.line').textContent = line;
     dialog.querySelector('.col').textContent = col;
     dialog.querySelector('.err').textContent = err;
+    dialog.showModal();
 };
