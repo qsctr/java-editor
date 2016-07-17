@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Java Editor</title>
+        <link rel="stylesheet" href="lib/mdl/material.min.css">
+        <link rel="stylesheet" href="lib/icons/material-icons.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+    <body>
+
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout-icon"></div>
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout__title">Java Editor</span>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout__title">Java Project</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="#">File 1</a>
+                    <a class="mdl-navigation__link" href="#">File 2</a>
+                    <a class="mdl-navigation__link" href="#">File 3</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <div id="editor"></div>
+            </main>
+        </div>
+
+        <dialog class="mdl-dialog" id="internal-error-dialog">
+            <h4 class="mdl-dialog__title">Internal error</h4>
+            <div class="mdl-dialog__content">
+                <p>An internal error has occured in Java Editor.</p>
+                <p>
+                    Error message: <span class="mono msg"></span>
+                    At file: <span class="mono url"></span>
+                    At line: <span class="mono line"></span>
+                    At column: <span class="mono col"></span>
+                    Error object: <span class="mono err"></span>
+                </p>
+                <button class="mdl-button mdl-js-button submit-issue">Submit a new issue on GitHub</button>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button restart">Restart</button>
+                <button type="button" class="mdl-button close-and-continue">Close and continue</button>
+            </div>
+        </dialog>
+
+        <script src="lib/mdl/material.js"></script>
+        <script src="node_modules/ace-builds/src-noconflict/ace.js"></script>
+        <script>
+            require('./js/init.js');
+        </script>
+
+    </body>
+</html>

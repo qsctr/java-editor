@@ -1,0 +1,21 @@
+{
+  "name": "java-editor",
+  "version": "0.1.0",
+  "description": "An editor for Java",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qsctr/java-editor.git"
+  },
+  "author": "qsctr",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  },
+  "dependencies": {
+    "ace-builds": "^1.2.2"
+  }
+}
