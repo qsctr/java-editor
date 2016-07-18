@@ -1,0 +1,16 @@
+.mdl-layout__title {
+    top: -3px;
+}
+
+.mdl-layout.is-small-screen #top-header-row {
+    margin-left: 56px;
+    padding-left: 0;
+}
+
+#top-header-row {
+    padding-right: 16px;
+}
+
+.mdl-layout__header-row .mdl-button--icon {
+    margin-bottom: 4px;
+}

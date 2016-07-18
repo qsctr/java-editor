@@ -2,8 +2,12 @@
     font-family: "Consolas", monospace;
 }
 
-.mdl-layout__title {
-    top: -3px;
+#top-header-row {
+    -webkit-app-region: drag;
+}
+
+#top-header-row button, .mdl-layout__drawer-button {
+    -webkit-app-region: no-drag;
 }
 
 main {
