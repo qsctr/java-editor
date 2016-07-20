@@ -3,6 +3,7 @@
 require('./onerror');
 require('./ui/dialogCenter');
 require('./ui/noTabNav');
+require('./ui/windowControls');
 require('./settings/settings');
 
 const editor = require('./editor');

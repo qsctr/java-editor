@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qsctr/java-editor.git"
+    "url": "https://github.com/qsctr/java-editor.git"
   },
   "author": "qsctr",
   "license": "MIT",
@@ -17,5 +17,6 @@
   },
   "dependencies": {
     "ace-builds": "^1.2.2"
-  }
+  },
+  "productName": "Java Editor"
 }
