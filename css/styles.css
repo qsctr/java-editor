@@ -11,16 +11,12 @@ body.show {
     background-color: #00796B;
 }
 
-.bg-primary {
-    background-color: #009688;
-}
-
 .bg-primary-light {
     background-color: #4DB6AC;
 }
 
 .mono {
-    font-family: Consolas, monospace;
+    font-family: "Consolas", monospace;
 }
 
 #top-header-row {
