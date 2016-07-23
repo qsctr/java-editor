@@ -6,6 +6,8 @@ require('./ui/smoothLoad');
 require('./ui/noTabNav');
 require('./ui/windowControls');
 require('./settings/settings');
+require('./project/project');
+require('./buttons');
 
 const editor = require('./editor');
 

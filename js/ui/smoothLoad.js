@@ -1,3 +1,5 @@
+'use strict';
+
 window.addEventListener('load', () => {
     document.body.classList.add('show');
     setTimeout(() => {

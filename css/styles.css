@@ -11,6 +11,10 @@ body.show {
     background-color: #00796B;
 }
 
+.bg-primary {
+    background-color: #009688;
+}
+
 .bg-primary-light {
     background-color: #4DB6AC;
 }
@@ -25,6 +29,20 @@ body.show {
 
 #top-header-row button, .mdl-layout__drawer-button {
     -webkit-app-region: no-drag;
+}
+
+#open-project-button {
+    align-self: flex-start;
+    margin-left: 40px;
+}
+
+.mdl-layout.is-small-screen #open-project-button {
+    margin-left: 16px;
+}
+
+#files-nav-file {
+    font-size: 18px;
+    color: #424242;
 }
 
 main {

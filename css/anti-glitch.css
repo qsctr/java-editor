@@ -1,18 +1,23 @@
 .mdl-layout__title {
     top: -3px;
+    -webkit-user-select: none;
 }
 
-.mdl-layout.is-small-screen #top-header-row {
+.mdl-layout.is-small-screen .mdl-layout__header-row {
     margin-left: 56px;
     padding-left: 0;
 }
 
-#top-header-row {
+.mdl-layout__header-row {
     padding-right: 16px;
 }
 
 .mdl-layout__header-row .mdl-button--icon {
     margin-bottom: 4px;
+}
+
+.mdl-layout__header-row button {
+    color: white;
 }
 
 #top-header-row .minimize-button i {

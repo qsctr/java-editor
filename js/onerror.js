@@ -19,13 +19,10 @@ dialog.querySelector('.close-and-continue').addEventListener('click', () => {
     dialog.close();
 });
 
-onerror = (msg, url, line, col, err) => {
-    // TODO: make this less repetitive
-    dialog.querySelector('.msg').textContent = msg;
-    dialog.querySelector('.url').textContent = url;
-    dialog.querySelector('.line').textContent = line;
-    dialog.querySelector('.col').textContent = col;
-    dialog.querySelector('.err').textContent = err;
+onerror = (...info) => {
+    info.forEach((x, i) => {
+        dialog.querySelectorAll('.error-info')[i].textContent = x;
+    });
     if (!dialog.open) {
         dialog.showModal();
     }

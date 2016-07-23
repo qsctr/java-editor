@@ -1,9 +1,8 @@
 'use strict';
 
 const fs = require('fs');
-const path =
-    require('electron').remote.app.getPath('userData')
-    + '/settings.json';
+const path = require('electron').remote.app.getPath('userData')
+        + '/settings.json';
 
 const defaultSettings = require('./default');
 const change = require('./change');
@@ -46,7 +45,7 @@ function checkAllExist() {
     let changed = false;
     for (let setting in defaultSettings) {
         if (settings[setting] === null
-        || settings[setting] === undefined) {
+                || settings[setting] === undefined) {
             settings[setting] = defaultSettings[setting];
             change[setting](value);
             changed = true;

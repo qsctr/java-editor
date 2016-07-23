@@ -1,3 +1,5 @@
+'use strict';
+
 const currentWindow = require('electron').remote.getCurrentWindow();
 const topHeader = document.querySelector('#top-header-row');
 
