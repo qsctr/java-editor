@@ -2,37 +2,20 @@
 
 const editElem = document.querySelector('#editor');
 
-let editor = null;
-let session;
-
-window.addEventListener('load', () => {
-    editor = ace.edit(editElem);
-    session = editor.getSession();
-    session.setMode('ace/mode/java');
-});
+let editor = ace.edit(editElem);
+let session = editor.getSession();
+session.setMode('ace/mode/java');
 
 exports.open = code => {
-    afterLoaded(() => {
-        editor.setValue(code);
-    });
+    editor.setValue(code);
+    editor.navigateFileStart();
+    editor.focus();
 };
 
 exports.setTheme = theme => {
-    afterLoaded(() => {
-        editor.setTheme('ace/theme/' + theme);
-    });
+    editor.setTheme('ace/theme/' + theme);
 };
 
 exports.setFontSize = size => {
     editElem.style.fontSize = size;
 };
-
-function afterLoaded(callback) {
-    if (editor !== null) {
-        callback();
-    } else {
-        window.addEventListener('load', () => {
-            callback();
-        });
-    }
-}

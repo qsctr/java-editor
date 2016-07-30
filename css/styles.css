@@ -1,6 +1,11 @@
+.mdl-layout__drawer {
+    -webkit-user-select: none;
+}
+
 body {
     opacity: 0;
     transition: opacity 1s;
+    font-family: Roboto, Arial, sans-serif;
 }
 
 body.show {
@@ -23,12 +28,24 @@ body.show {
     font-family: "Consolas", monospace;
 }
 
-#top-header-row {
+#window-bar {
     -webkit-app-region: drag;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: #00796B;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 8px;
 }
 
-#top-header-row button, .mdl-layout__drawer-button {
+#window-bar button {
     -webkit-app-region: no-drag;
+}
+
+.mdl-layout__container {
+    height: calc(100% - 48px);
 }
 
 #open-project-button {
@@ -40,9 +57,9 @@ body.show {
     margin-left: 16px;
 }
 
-#files-nav-file {
+.files-nav-file {
     font-size: 18px;
-    color: #424242;
+    color: #424242 !important;
 }
 
 main {

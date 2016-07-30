@@ -16,7 +16,9 @@
     "electron-prebuilt": "^1.2.0"
   },
   "dependencies": {
-    "ace-builds": "^1.2.2"
+    "ace-builds": "^1.2.2",
+    "chokidar": "^1.6.0",
+    "ramda": "^0.21.0"
   },
   "productName": "Java Editor"
 }

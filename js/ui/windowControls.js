@@ -1,13 +1,13 @@
 'use strict';
 
 const currentWindow = require('electron').remote.getCurrentWindow();
-const topHeader = document.querySelector('#top-header-row');
+const windowBar = document.querySelector('#window-bar');
 
-topHeader.querySelector('.minimize-button').addEventListener('click', () => {
+windowBar.querySelector('.minimize-button').addEventListener('click', () => {
     currentWindow.minimize();
 });
 
-topHeader.querySelector('.maximize-button').addEventListener('click', () => {
+windowBar.querySelector('.maximize-button').addEventListener('click', () => {
     if (currentWindow.isMaximized()) {
         currentWindow.unmaximize();
     } else {
@@ -15,6 +15,6 @@ topHeader.querySelector('.maximize-button').addEventListener('click', () => {
     }
 });
 
-topHeader.querySelector('.close-button').addEventListener('click', () => {
+windowBar.querySelector('.close-button').addEventListener('click', () => {
     currentWindow.close();
 });

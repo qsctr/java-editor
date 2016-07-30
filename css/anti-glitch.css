@@ -1,6 +1,5 @@
 .mdl-layout__title {
     top: -3px;
-    -webkit-user-select: none;
 }
 
 .mdl-layout.is-small-screen .mdl-layout__header-row {
@@ -20,11 +19,11 @@
     color: white;
 }
 
-#top-header-row .minimize-button i {
+#window-bar .minimize-button i {
     font-size: 22px;
     margin-top: 5px;
 }
 
-#top-header-row .maximize-button i {
+#window-bar .maximize-button i {
     font-size: 20px;
 }

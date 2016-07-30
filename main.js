@@ -10,7 +10,8 @@ app.on('ready', () => {
         width: 800,
         height: 600,
         backgroundColor: '#009688',
-        frame: false
+        frame: false,
+        minWidth: 300,
     });
 
     mainWindow.loadURL(`file://${__dirname}/index.html`);

@@ -1,22 +1,16 @@
 'use strict';
 
 require('./onerror');
-require('./ui/dialogCenter');
-require('./ui/smoothLoad');
-require('./ui/noTabNav');
-require('./ui/windowControls');
-require('./settings/settings');
-require('./project/project');
-require('./buttons');
 
-const editor = require('./editor');
+window.addEventListener('load', () => {
 
-editor.open(
-`public class Test {
+    require('./ui/dialogCenter');
+    require('./ui/smoothLoad');
+    require('./ui/noTabNav');
+    require('./ui/windowControls');
+    require('./settings/settings');
+    require('./editor');
+    require('./project/project');
+    require('./buttons');
     
-    public Test() {
-        // this is a constructor
-    }
-    
-}`
-);
+});
