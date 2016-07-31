@@ -7,17 +7,17 @@
     padding-left: 0;
 }
 
-.mdl-layout__header-row {
+/*.mdl-layout__header-row {
     padding-right: 16px;
-}
+}*/
 
-.mdl-layout__header-row .mdl-button--icon {
+/*.mdl-layout__header-row .mdl-button--icon {
     margin-bottom: 4px;
-}
+}*/
 
-.mdl-layout__header-row button {
+/*.mdl-layout__header-row button {
     color: white;
-}
+}*/
 
 #window-bar .minimize-button i {
     font-size: 22px;

@@ -1,7 +1,3 @@
-.mdl-layout__drawer {
-    -webkit-user-select: none;
-}
-
 body {
     opacity: 0;
     transition: opacity 1s;
