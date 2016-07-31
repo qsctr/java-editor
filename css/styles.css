@@ -47,6 +47,17 @@ body.show {
     height: calc(100% - 48px);
 }
 
+#drawer-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 40px;
+}
+
+.mdl-layout.is-small-screen #drawer-title {
+    padding-right: 16px;
+}
+
 #open-project-button {
     align-self: flex-start;
     margin-left: 40px;
