@@ -1,1 +1,1 @@
-jar -cMf "Java Editor.zip" "Java Editor-win32-x64"
+jar -cMf "Java-Editor.zip" "Java Editor-win32-x64"
