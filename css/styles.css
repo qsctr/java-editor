@@ -58,8 +58,7 @@ body.show {
 
 #files-nav {
     flex: 1;
-    overflow-x: auto;
-    overflow-y: scroll;
+    overflow: auto;
     padding-top: 0;
 }
 

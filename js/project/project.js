@@ -24,10 +24,12 @@ exports.open = path => {
     [...document.querySelectorAll('.project-name')].forEach(x => {
         x.textContent = currentProjectName;
     });
-    drawer.open(fs.readdirSync(path)
+    let files = fs.readdirSync(path)
             .filter(name => fs.statSync(path + '/' + name).isFile()
                     && name.slice(-5) === '.java')
-            .map(name => name.slice(0, -5)));
+            .map(name => name.slice(0, -5));
+    drawer.open(files);
+    exports.select(files[0]);
 };
 
 exports.select = file => {
