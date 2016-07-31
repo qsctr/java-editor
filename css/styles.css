@@ -8,6 +8,10 @@ body.show {
     opacity: 1;
 }
 
+.mdl-layout__drawer, .mdl-layout__header {
+    -webkit-user-select: none;
+}
+
 .bg-primary-dark {
     background-color: #00796B;
 }
@@ -32,7 +36,6 @@ body.show {
     color: white;
     background-color: #00796B;
     align-items: center;
-    padding-left: 16px;
     padding-right: 8px;
 }
 
@@ -51,6 +54,13 @@ body.show {
 
 .mdl-layout.is-small-screen #open-project-button {
     margin-left: 16px;
+}
+
+#files-nav {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: scroll;
+    padding-top: 0;
 }
 
 .files-nav-file {
