@@ -14,6 +14,6 @@ window.addEventListener('load', () => {
 
     const project = require('./project/project');
 
-    project.open('GettingStarted');
+    project.openDefault();
     
 });

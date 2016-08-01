@@ -32,6 +32,16 @@ exports.open = path => {
     exports.select(files[0]);
 };
 
+exports.openDefault = () => {
+    let path;
+    try {
+        fs.accessSync(path = 'resources/app/GettingStarted');
+    } catch (e) {
+        fs.accessSync(path = 'GettingStarted');
+    }
+    exports.open(path);
+}
+
 exports.select = file => {
     currentFile = file;
     editor.open(fs.readFileSync(
