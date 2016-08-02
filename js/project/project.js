@@ -5,7 +5,6 @@ const fs = require('fs');
 const pick = require('./pick');
 const drawer = require('../drawer');
 const editor = require('../editor');
-const history = require('../history/history');
 
 let currentProjectPath = null;
 let currentProjectName = null;
@@ -31,8 +30,17 @@ exports.open = path => {
             .map(name => name.slice(0, -5));
     drawer.open(files);
     exports.select(files[0]);
-    history.addProject(path);
 };
+
+exports.openDefault = () => {
+    let path;
+    try {
+        fs.accessSync(path = 'resources/app/GettingStarted');
+    } catch (e) {
+        fs.accessSync(path = 'GettingStarted');
+    }
+    exports.open(path);
+}
 
 exports.select = file => {
     currentFile = file;
