@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('electron').remote.app.getPath('userData')
         + '/settings.json';
 
-const defaultSettings = require('./default');
+const defaultSettings = require('./defaultSettings');
 const change = require('./change');
 
 let settings;
