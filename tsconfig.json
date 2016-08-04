@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noImplicitReturns": true,
+        "sourceMap": true,
+        "noEmitOnError": true,
+        "rootDir": "./ts",
+        "outDir": "./out-js"
+    },
+    "exclude": [
+        "node_modules",
+        "dependencies",
+        "Java Editor-win32-x64"
+    ]
+}
