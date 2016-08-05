@@ -1,16 +1,14 @@
-'use strict';
-
-const project = require('./project/project');
+import * as project from './project/project';
 
 const drawer = document.querySelector('.mdl-layout__drawer');
 const filesNav = document.querySelector('#files-nav');
 
-exports.open = files => {
+export function open(files: string[]) {
     [...filesNav.children].forEach(child => child.remove());
-    files.forEach(exports.addFile);
-};
+    files.forEach(addFile);
+}
 
-exports.addFile = file => {
+export function addFile(file: string) {
     let elem = document.createElement('div');
     elem.textContent = file;
     elem.classList.add('mdl-navigation__link', 'files-nav-file');
@@ -19,18 +17,18 @@ exports.addFile = file => {
     });
     filesNav.appendChild(elem);
     adjustHeight();
-};
+}
 
 window.addEventListener('resize', adjustHeight);
 
 function adjustHeight() {
-    let restHeight = R.sum([...drawer.children]
-            .filter(child => child !== filesNav)
-            .map(x => x.clientHeight));
-    let filesCount = filesNav.children.length;
-    [...filesNav.children].forEach(file => {
+    const restHeight = R.sum([...drawer.children]
+        .filter(child => child !== filesNav)
+        .map(x => x.clientHeight));
+    const filesCount = filesNav.children.length;
+    ([...filesNav.children] as HTMLElement[]).forEach(file => {
         file.style.paddingTop = file.style.paddingBottom =
-                Math.min(16, Math.max(8, Math.floor((drawer.clientHeight
-                - restHeight - 24 * filesCount) / filesCount / 2))) + 'px';
+            Math.min(16, Math.max(8, Math.floor((drawer.clientHeight
+            - restHeight - 24 * filesCount) / filesCount / 2))) + 'px';
     });
 }

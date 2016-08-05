@@ -1,7 +1,7 @@
-'use strict';
+import { remote } from 'electron';
 
-const currentWindow = require('electron').remote.getCurrentWindow();
-const windowBar = document.querySelector('#window-bar');
+const currentWindow = remote.getCurrentWindow();
+const windowBar = document.querySelector('#window-bar') as HTMLElement;
 const layout = document.querySelector('.mdl-layout');
 
 windowBar.querySelector('.minimize-button').addEventListener('click', () => {
@@ -26,5 +26,5 @@ window.addEventListener('resize', adjustLeftPadding);
 
 function adjustLeftPadding() {
     windowBar.style.paddingLeft =
-            layout.classList.contains('is-small-screen') ? '16px' : '40px';
+        layout.classList.contains('is-small-screen') ? '16px' : '40px';
 }

@@ -1,12 +1,11 @@
-'use strict';
+import { remote } from 'electron';
 
-const remote = require('electron').remote;
 const dialog = remote.dialog;
 const currentWindow = remote.getCurrentWindow();
 const app = remote.app;
 
-module.exports = () => {
-    let result = dialog.showOpenDialog(currentWindow, {
+export default function pick() {
+    const result = dialog.showOpenDialog(currentWindow, {
         title: 'Choose a project folder',
         defaultPath: app.getPath('documents'),
         buttonLabel: 'Select',
@@ -16,4 +15,4 @@ module.exports = () => {
         return result[0];
     }
     return null;
-};
+}

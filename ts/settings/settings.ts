@@ -1,14 +1,12 @@
-'use strict';
+import * as fs from 'fs';
+import { remote } from 'electron';
+import defaultSettings from './default';
+import change from './change';
 
-const fs = require('fs');
-const path = require('electron').remote.app.getPath('userData')
-        + '/settings.json';
+const path = remote.app.getPath('userData') + '/settings.json';
 
-const defaultSettings = require('./default');
-const change = require('./change');
-
-let settings;
-let exists;
+let settings: typeof defaultSettings; 
+let exists: boolean;
 
 try {
     fs.accessSync(path);
@@ -25,29 +23,33 @@ if (exists) {
     save();
 }
 
-for (let setting in settings) {
+for (const setting in settings) {
     change[setting](settings[setting]);
 }
 
-exports.get = () => settings;
+export function get() {
+    return settings;
+}
 
-exports.set = (setting, value) => {
+// ideally the type of value would be typeof settings[setting] but typescript
+// doesn't allow it
+export function set(setting: string, value: any) {
     settings[setting] = value;
     change[setting](value);
     save();
-};
+}
 
-function save(newSettings) {
+function save() {
     fs.writeFileSync(path, JSON.stringify(settings));
 }
 
 function checkAllExist() {
     let changed = false;
-    for (let setting in defaultSettings) {
+    for (const setting in defaultSettings) {
         if (settings[setting] === null
                 || settings[setting] === undefined) {
             settings[setting] = defaultSettings[setting];
-            change[setting](value);
+            change[setting](settings[setting]);
             changed = true;
             console.warn(`Setting ${setting} does not exist. Falling back to default.`);
         }
