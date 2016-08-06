@@ -9,7 +9,7 @@ export function open(files: string[]) {
 }
 
 export function addFile(file: string) {
-    let elem = document.createElement('div');
+    const elem = document.createElement('div');
     elem.textContent = file;
     elem.classList.add('mdl-navigation__link', 'files-nav-file');
     elem.addEventListener('click', () => {

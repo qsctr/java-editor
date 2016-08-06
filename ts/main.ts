@@ -1,8 +1,6 @@
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+import { app, BrowserWindow } from 'electron';
 
-let mainWindow;
+let mainWindow: Electron.BrowserWindow;
 
 app.on('ready', () => {
 
@@ -13,8 +11,11 @@ app.on('ready', () => {
         frame: false,
         minWidth: 300,
     });
+    
+    let parentDir = __dirname.slice(0, Math.max(
+        __dirname.lastIndexOf('/'), __dirname.lastIndexOf('\\')));
 
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(`file://${parentDir}/index.html`);
 
     mainWindow.on('closed', () => {
         mainWindow = null;

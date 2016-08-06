@@ -2,7 +2,7 @@
   "name": "java-editor",
   "version": "0.1.0",
   "description": "An editor for Java",
-  "main": "main.js",
+  "main": "out-js/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/qsctr/java-editor.git"
