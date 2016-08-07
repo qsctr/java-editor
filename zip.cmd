@@ -1,7 +1,10 @@
 rem save space
-if exist "Java Editor-win32-x64/resources/app/Java-Editor.zip" rmdir /S /Q "Java Editor-win32-x64/resources/app/Java-Editor.zip"
-rmdir /S /Q "Java Editor-win32-x64/resources/app/node_modules/ace-builds/src"
-rmdir /S /Q "Java Editor-win32-x64/resources/app/node_modules/ace-builds/src-min"
-rmdir /S /Q "Java Editor-win32-x64/resources/app/node_modules/ace-builds/src-min-noconflict"
+cd Java Editor-win32-x64/resources/app
+if exist Java-Editor.zip del Java-Editor.zip
+cd node_modules/ace-builds
+if exist src/ rmdir /S /Q src
+if exist src-min/ rmdir /S /Q src-min
+if exist src-min-noconflict/ rmdir /S /Q src-min-noconflict
+cd ../../../../..
 
-jar -cMf "Java-Editor.zip" "Java Editor-win32-x64"
+jar -cMf Java-Editor.zip "Java Editor-win32-x64"
