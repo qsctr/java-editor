@@ -1,10 +1,11 @@
 import './onerror';
+import './editor/loadAce';
 
 window.addEventListener('load', () => {
 
     // the import statement cannot be used as these are imported dynamically
 
-    require('./editor');
+    require('./editor/editor');
     require('./ui/dialogCenter');
     require('./ui/smoothLoad');
     require('./ui/noTabNav');

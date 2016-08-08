@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import pick from './pick';
 import * as drawer from '../drawer';
-import * as editor from '../editor';
+import * as editor from '../editor/editor';
 
 let currentProjectPath: string = null;
 let currentProjectName: string = null;

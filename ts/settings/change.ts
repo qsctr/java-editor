@@ -1,4 +1,4 @@
-import * as editor from '../editor';
+import * as editor from '../editor/editor';
 import SettingsObject from './SettingsObject';
 
 // This type declaration is not strictly necessary but can help when a new
