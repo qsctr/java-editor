@@ -34,22 +34,16 @@ Open cmd in project root.
 
 To compile typescript files (in ./ts only):
     
-- If you are using Visual Studio Code press `Ctrl + Shift + B` or `F1` then `Run Build Task`
+- If you are using Visual Studio Code press `Ctrl + Shift + B`
 
-- Otherwise run `tsc -p .`
-
-- For watch mode add `-w`
+- Or you can run `compile`
 
 To run the app:
 
     run
     
-To package the app:
+To package and zip the app
 
     package
-    
-To zip the app (and remove unnecessary files):
-
-    zip
     
 You need to have JDK installed and the JDK bin directory in your PATH because `zip` uses `jar` to zip.
