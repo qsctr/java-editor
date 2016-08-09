@@ -1,3 +1,5 @@
+call compile
+
 call electron-packager . --overwrite --platform=win32 --arch=x64 --prune --version-string.CompanyName="" --version-string.FileDescription="Java Editor" --icon="icon.ico"
 
 rem save space
