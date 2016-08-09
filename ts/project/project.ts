@@ -9,7 +9,6 @@ let currentFile: string = null;
 
 export function openByUserPick() {
     const path = pick();
-    console.log(path);
     if (path) {
         open(path);
     }

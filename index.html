@@ -48,11 +48,7 @@
             <h4 class="mdl-dialog__title">Internal error</h4>
             <div class="mdl-dialog__content">
                 <p>An internal error has occured in Java Editor.</p>
-                <p>Error message: <span class="mono error-info"></span></p>
-                <p>At file: <span class="mono error-info"></span></p>
-                <p>At line: <span class="mono error-info"></span></p>
-                <p>At column: <span class="mono error-info"></span></p>
-                <p>Error object: <span class="mono error-info"></span></p>
+                <div class="mono error-stack"></div>
                 <button class="mdl-button mdl-js-button mdl-button--primary submit-issue">Submit a new issue on GitHub</button>
             </div>
             <div class="mdl-dialog__actions">
@@ -67,6 +63,5 @@
             const R = require('ramda');
             require('./out-js/init.js');
         </script>
-
     </body>
 </html>

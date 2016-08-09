@@ -17,11 +17,10 @@ dialog.querySelector('.close-and-continue').addEventListener('click', () => {
     dialog.close();
 });
 
-onerror = (...info: (string | number | Error)[]) => {
-    info.forEach((x, i) => {
-        dialog.querySelectorAll('.error-info')[i].textContent = x.toString();
-    });
+window.addEventListener('error', (event: ErrorEvent) => {
+    dialog.querySelector('.error-stack').textContent =
+        event.error.stack.replace(' at ', '\n    at ');
     if (!dialog.open) {
         dialog.showModal();
     }
-};
+});
