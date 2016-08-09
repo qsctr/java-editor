@@ -26,7 +26,7 @@ body.show {
 
 .mono {
     font-family: "Consolas", monospace;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 #window-bar {
