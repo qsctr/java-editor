@@ -99,3 +99,7 @@ main {
 #internal-error-dialog .error-stack {
     margin-bottom: 16px;
 }
+
+.mdl-snackbar {
+    z-index: 4;
+}
