@@ -5,6 +5,7 @@
     "HTMLDialogElement": "github:qsctr/HTMLDialogElement-TypeScript#1ed2cf6f9001012e70b3102f6a7011222813ea85",
     "ace": "registry:dt/ace#0.0.0+20160630235124",
     "github-electron": "registry:dt/github-electron#1.3.1+20160729121026",
+    "mdl-materialsnackbar-typescript": "github:qsctr/mdl-materialsnackbar-typescript#a6961c0bfbd025a786f274588efd246e8f4dcbfa",
     "node": "registry:dt/node#6.0.0+20160802155038",
     "ramda": "github:donnut/typescript-ramda/global#51ecd782b2793239e33e39ece07c56906de3fabb"
   }
