@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import pick from './pick';
 import * as drawer from '../drawer';
 import * as editor from '../editor/editor';
+import showSnackbar from '../ui/snackbar';
 
 let currentProjectPath: string = null;
 let currentProjectName: string = null;
@@ -25,6 +26,12 @@ export function open(path: string) {
         .filter(name => fs.statSync(path + '/' + name).isFile()
             && name.slice(-5) === '.java')
         .map(name => name.slice(0, -5));
+    if (files.length === 0) {
+        showSnackbar({
+            message: 'No .java files found in this folder'
+        });
+        return;
+    }
     drawer.open(files);
     select(files[0]);
 }
