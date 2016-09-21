@@ -26,6 +26,7 @@ body.show {
 
 .mono {
     font-family: "Consolas", monospace;
+    white-space: pre-wrap;
 }
 
 #window-bar {
@@ -93,4 +94,12 @@ main {
 
 #internal-error-dialog {
     width: fit-content;
+}
+
+#internal-error-dialog .error-stack {
+    margin-bottom: 16px;
+}
+
+.mdl-snackbar {
+    z-index: 4;
 }

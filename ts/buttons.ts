@@ -1,6 +1,4 @@
-'use strict';
-
-const project = require('./project/project');
+import * as project from './project/project';
 
 const drawer = document.querySelector('.mdl-layout__drawer');
 
