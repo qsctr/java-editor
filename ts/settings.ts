@@ -45,6 +45,7 @@ export function setApplyFunction(setting: string, fun: (value: any) => any) {
 
 export function applyAll() {
     for (const setting in settings) {
+        checkValid(setting);
         applyFunction[setting](settings[setting]);
     }
 }
