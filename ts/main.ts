@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 
-let mainWindow: Electron.BrowserWindow;
+let mainWindow: Electron.BrowserWindow | null;
 
 app.on('ready', () => {
 
@@ -11,12 +11,8 @@ app.on('ready', () => {
         minWidth: 300
     });
 
-    mainWindow.setMenu(null);
-    
-    let parentDir = __dirname.slice(0, Math.max(
-        __dirname.lastIndexOf('/'), __dirname.lastIndexOf('\\')));
-
-    mainWindow.loadURL(`file://${parentDir}/index.html`);
+    mainWindow.setMenuBarVisibility(false);
+    mainWindow.loadURL(`file://${__dirname.slice(0, Math.max(__dirname.lastIndexOf('/'), __dirname.lastIndexOf('\\')))}/index.html`);
 
     mainWindow.on('closed', () => {
         mainWindow = null;

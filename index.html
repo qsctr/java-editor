@@ -8,26 +8,21 @@
         <link rel="stylesheet" href="dependencies/mdl/material.min.css">
         <link rel="stylesheet" href="dependencies/icons/material-icons.css">
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/anti-glitch.css">
 
     </head>
     <body>
 
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
-            <header class="mdl-layout__header">
-                <div class="mdl-layout__header-row">
-                    <span class="mdl-layout__title project-name">No project open</span>
-                </div>
-            </header>
-            <div class="mdl-layout__drawer">
-                <span class="mdl-layout__title project-name" id="drawer-title">No project open</span>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="open-project-button">Open project</button>
-                <div style="height: 16px;"></div>
-                <nav class="mdl-navigation" id="files-nav"></nav>
+        <div id="container">
+            <div id="top-bar">
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="nav-button">
+                    <i class="material-icons">menu</i>
+                </button>
+                <div class="mdl-layout-title project-name">Project name</div>
             </div>
-            <main class="mdl-layout__content">
+            <div id="main">
+                <div id="nav"></div>
                 <div id="editor"></div>
-            </main>
+            </div>
         </div>
 
         <dialog class="mdl-dialog" id="internal-error-dialog">
@@ -49,6 +44,7 @@
         </div>
 
         <script src="dependencies/mdl/material.js"></script>
+        <script src="node_modules/ace-builds/src-min-noconflict/ace.js"></script>
         <script>
             'use strict';
             const R = require('ramda');

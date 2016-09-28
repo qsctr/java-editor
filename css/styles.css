@@ -8,84 +8,41 @@ body.show {
     opacity: 1;
 }
 
-.mdl-layout__drawer, .mdl-layout__header {
-    -webkit-user-select: none;
-}
-
-.bg-primary-dark {
-    background-color: #00796B;
-}
-
-.bg-primary {
-    background-color: #009688;
-}
-
-.bg-primary-light {
-    background-color: #4DB6AC;
-}
-
 .mono {
-    font-family: "Consolas", monospace;
+    font-family: Consolas, monospace;
     white-space: pre-wrap;
 }
 
-#window-bar {
-    -webkit-app-region: drag;
-    height: 48px;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    background-color: #00796B;
-    align-items: center;
-    padding-right: 8px;
-}
-
-#window-bar button {
-    -webkit-app-region: no-drag;
-}
-
-#drawer-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 40px;
-}
-
-.mdl-layout.is-small-screen #drawer-title {
-    padding-right: 16px;
-}
-
-#open-project-button {
-    align-self: flex-start;
-    margin-left: 40px;
-}
-
-.mdl-layout.is-small-screen #open-project-button {
-    margin-left: 16px;
-}
-
-#files-nav {
-    flex: 1;
-    overflow: auto;
-    padding-top: 0;
-}
-
-.files-nav-file {
-    font-size: 18px;
-    color: #424242 !important;
-}
-
-main {
+#container {
     display: flex;
     flex-direction: column;
 }
 
+#top-bar {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+}
+
+#top-bar button {
+    margin: 8px;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+}
+
+#nav {
+    width: 250px;
+    resize: horizontal;
+    transition: width 0.2s ease-in-out;
+}
+
 #editor {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    flex: 1;
 }
 
 #internal-error-dialog {
@@ -94,8 +51,4 @@ main {
 
 #internal-error-dialog .error-stack {
     margin-bottom: 16px;
-}
-
-.mdl-snackbar {
-    z-index: 4;
 }
