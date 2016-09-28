@@ -1,11 +1,8 @@
 import './errorDialog';
 import './dialogCenter';
-import './loadAceScript';
 import './topBar';
 import './nav';
-
-window.addEventListener('load', () => {
-    require('./editor');
-    require('./settings').applyAll();
-    require('./showPage');
-});
+import './editor';
+import { applyAll } from './settings';
+applyAll();
+import './showPage';
