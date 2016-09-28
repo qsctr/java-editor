@@ -44,10 +44,6 @@ body.show {
     -webkit-app-region: no-drag;
 }
 
-.mdl-layout__container {
-    height: calc(100% - 48px);
-}
-
 #drawer-title {
     white-space: nowrap;
     overflow: hidden;

@@ -9,7 +9,6 @@ window.addEventListener('load', () => {
     require('./editor/editor');
     require('./ui/smoothLoad');
     require('./ui/noTabNav');
-    require('./ui/windowControls');
 
     // set all the settings first, even though init does not use any settings
     require('./settings/settings');

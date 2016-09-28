@@ -8,9 +8,10 @@ app.on('ready', () => {
         width: 800,
         height: 600,
         backgroundColor: '#009688',
-        frame: false,
-        minWidth: 300,
+        minWidth: 300
     });
+
+    mainWindow.setMenu(null);
     
     let parentDir = __dirname.slice(0, Math.max(
         __dirname.lastIndexOf('/'), __dirname.lastIndexOf('\\')));
