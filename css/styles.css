@@ -18,15 +18,16 @@ body.show {
     flex-direction: column;
 }
 
-#top-bar {
+.button-bar {
     height: 48px;
+    padding-left: 4px;
     display: flex;
     flex-direction: row;
     color: white;
     align-items: center;
 }
 
-#top-bar button {
+.button-bar button {
     margin: 8px;
 }
 
@@ -39,6 +40,8 @@ body.show {
     width: 250px;
     resize: horizontal;
     transition: width 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 #editor {
@@ -49,6 +52,10 @@ body.show {
     width: fit-content;
 }
 
-#internal-error-dialog .error-stack {
+#internal-error-dialog-error-stack {
     margin-bottom: 16px;
+}
+
+.mdl-snackbar {
+    z-index: 4;
 }

@@ -1,6 +1,6 @@
-import * as settings from './settings';
+import * as settings from '../settings';
 
-const elem = document.querySelector('#editor') as HTMLElement;
+const elem = qs('#editor') as HTMLElement;
 const editor = ace.edit(elem);
 const session = editor.getSession();
 session.setMode('ace/mode/java');
@@ -18,11 +18,11 @@ export function setFontSize(size: string) {
     elem.style.fontSize = size;
 }
 
-settings.setApplyFunction('editorTheme', setTheme);
-settings.setApplyFunction('editorFontSize', setFontSize);
+settings.emitter.on('editorTheme', setTheme);
+settings.emitter.on('editorFontSize', setFontSize);
 
 function adjustHeight() {
-    elem.style.height = (window.innerHeight - (document.querySelector('#container').clientHeight - elem.clientHeight)) + 'px';
+    elem.style.height = (window.innerHeight - (qs('#container').clientHeight - elem.clientHeight)) + 'px';
 }
 
 adjustHeight();

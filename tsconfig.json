@@ -12,7 +12,13 @@
         "sourceMap": true,
         "noEmitOnError": true,
         "rootDir": "./ts",
-        "outDir": "./out-js"
+        "outDir": "./out-js",
+        "lib": [
+            "dom",
+            // "dom.iterable", bug; will be fixed in typescript 2.1
+            "es6",
+            "es2016.array.include"
+        ]
     },
     "exclude": [
         "node_modules",

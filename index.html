@@ -13,14 +13,20 @@
     <body>
 
         <div id="container">
-            <div id="top-bar">
-                <button class="mdl-button mdl-js-button mdl-button--icon" id="nav-button">
+            <div class="button-bar" id="top-bar">
+                <button class="mdl-button mdl-js-button mdl-button--icon" id="top-bar-nav-button">
                     <i class="material-icons">menu</i>
                 </button>
                 <div class="mdl-layout-title project-name">Project name</div>
             </div>
             <div id="main">
-                <div id="nav"></div>
+                <div id="nav">
+                    <div class="button-bar">
+                        <button class="mdl-button mdl-js-button mdl-button--icon" id="nav-open-button" title="Open project">
+                            <i class="material-icons">folder_open</i>
+                        </button>
+                    </div>
+                </div>
                 <div id="editor"></div>
             </div>
         </div>
@@ -29,12 +35,12 @@
             <h4 class="mdl-dialog__title">Internal error</h4>
             <div class="mdl-dialog__content">
                 <p>An internal error has occured in Java Editor.</p>
-                <div class="mono error-stack"></div>
-                <button class="mdl-button mdl-js-button mdl-button--primary submit-issue">Submit a new issue on GitHub</button>
+                <div class="mono" id="internal-error-dialog-error-stack"></div>
+                <button class="mdl-button mdl-js-button mdl-button--primary" id="internal-error-dialog-submit-issue">Submit a new issue on GitHub</button>
             </div>
             <div class="mdl-dialog__actions">
-                <button type="button" class="mdl-button restart">Restart</button>
-                <button type="button" class="mdl-button close-and-continue">Close and continue</button>
+                <button type="button" class="mdl-button" id="internal-error-dialog-restart">Restart</button>
+                <button type="button" class="mdl-button" id="internal-error-dialog-close-and-continue">Close and continue</button>
             </div>
         </dialog>
 

@@ -1,4 +1,7 @@
-const navElem = document.querySelector('#nav') as HTMLElement;
+import * as project from '../project';
+
+const navElem = qs('#nav') as HTMLElement;
+const openButton = qs('#nav-open-button');
 
 let open = true;
 
@@ -19,3 +22,7 @@ export function toggle() {
         show();
     }
 }
+
+openButton.addEventListener('click', () => {
+    project.openUsingDialog();
+});

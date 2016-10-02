@@ -1,0 +1,1 @@
+componentHandler.upgradeAllRegistered();

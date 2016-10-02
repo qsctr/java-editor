@@ -1,5 +1,7 @@
 import { remote } from 'electron';
 import * as fs from 'fs';
+import exists from './utils/exists';
+import safeEmitter from './utils/safeEmitter';
 
 const path = remote.app.getPath('userData') + '/settings.json';
 
@@ -8,18 +10,11 @@ const defaultSettings = {
     editorFontSize: '16px'
 };
 
-let applyFunction: { [setting: string]: (value: any) => any; } = {};
+export const emitter = new (safeEmitter(Object.keys(defaultSettings)))();
+
 let settings: typeof defaultSettings;
-let exists: boolean;
 
-try {
-    fs.accessSync(path);
-    exists = true;
-} catch (e) {
-    exists = false;
-}
-
-if (exists) {
+if (exists(path)) {
     settings = JSON.parse(fs.readFileSync(path, 'utf-8'));
     fixMissing();
 } else {
@@ -32,21 +27,14 @@ export function get() {
 }
 
 export function set(setting: string, value: any) {
-    checkValid(setting);
+    emitter.emit(setting, value);
     settings[setting] = value;
-    applyFunction[setting](value);
     write();
-}
-
-export function setApplyFunction(setting: string, fun: (value: any) => any) {
-    checkValid(setting);
-    applyFunction[setting] = fun;
 }
 
 export function applyAll() {
     for (const setting in settings) {
-        checkValid(setting);
-        applyFunction[setting](settings[setting]);
+        emitter.emit(setting, settings[setting]);
     }
 }
 
@@ -65,11 +53,5 @@ function fixMissing() {
     }
     if (changed) {
         write();
-    }
-}
-
-function checkValid(setting: string) {
-    if (defaultSettings[setting] === undefined) {
-        throw new Error(`${setting} is not a valid setting`);
     }
 }
