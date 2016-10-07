@@ -1,14 +1,20 @@
 import { remote } from 'electron';
 import { readdirSync } from 'fs';
-import * as projectName from './ui/projectName';
-import * as nav from './ui/nav';
 import snackbar from './ui/snackbar';
 import { isDirectory, isFile } from './utils/exists';
+import safeEmitter from './utils/safeEmitter';
 import * as file from './file';
 
 const dialog = remote.dialog;
 const currentWindow = remote.getCurrentWindow();
 const app = remote.app;
+
+const events = [
+    'newProjectName', // string
+    'newProjectFiles' // string[]
+];
+
+export const emitter = new (safeEmitter(events))();
 
 let currentProjectPath: string;
 
@@ -37,7 +43,7 @@ export function open(path: string) {
         return snackbar(`${path} has no Java source files`);
     }
     currentProjectPath = path;
-    projectName.change(path.slice(Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\')) + 1));
-    nav.updateFiles(fileNames);
+    emitter.emit('newProjectName', path.slice(Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\')) + 1));
+    emitter.emit('newProjectFiles', fileNames);
     file.open(fileNames[0]);
 }

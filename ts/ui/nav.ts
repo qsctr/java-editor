@@ -27,7 +27,11 @@ export function toggle() {
     }
 }
 
-export function updateFiles(names: string[]) {
+openButton.addEventListener('click', () => {
+    project.openUsingDialog();
+});
+
+project.emitter.on('newProjectFiles', (names: string[]) => {
     while (filesElem.childElementCount > 0) {
         filesElem.firstElementChild.remove();
     }
@@ -38,10 +42,6 @@ export function updateFiles(names: string[]) {
         });
         filesElem.appendChild(fileElem);
     }
-}
-
-openButton.addEventListener('click', () => {
-    project.openUsingDialog();
 });
 
 file.emitter.on('newFileOpened', (file: string) => {
