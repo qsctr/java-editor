@@ -13,3 +13,5 @@ import './ui/topBar';
 import { applyAll } from './settings'; applyAll();
 // must be last
 import './ui/showPage';
+// temporary
+import { open } from './project'; open('Welcome');
