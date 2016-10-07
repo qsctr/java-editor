@@ -15,7 +15,7 @@ export function setTheme(theme: string) {
 }
 
 export function setFontSize(size: string) {
-    elem.style.fontSize = size;
+    editor.setFontSize(size);
 }
 
 settings.emitter.on('editorTheme', setTheme);

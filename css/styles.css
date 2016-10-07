@@ -2,6 +2,7 @@ body {
     opacity: 0;
     transition: opacity 1s;
     font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
 }
 
 body.show {
@@ -37,11 +38,26 @@ body.show {
 }
 
 #nav {
-    width: 250px;
+    width: 200px;
     resize: horizontal;
     transition: width 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
+    color: white;
+}
+
+#nav-files {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-file {
+    padding: 16px;
+}
+
+.nav-file-selected {
+    background-color: #00796B;
 }
 
 #editor {

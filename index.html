@@ -17,14 +17,23 @@
                 <button class="mdl-button mdl-js-button mdl-button--icon" id="top-bar-nav-button">
                     <i class="material-icons">menu</i>
                 </button>
+                <div class="mdl-tooltip" for="top-bar-nav-button">Toggle menu</div>
                 <div class="mdl-layout-title project-name">Project name</div>
+                <div class="mdl-layout-title mono"> / </div>
+                <div class="mdl-layout-title file-name">File name</div>
             </div>
             <div id="main">
                 <div id="nav">
                     <div class="button-bar">
-                        <button class="mdl-button mdl-js-button mdl-button--icon" id="nav-open-button" title="Open project">
+                        <button class="mdl-button mdl-js-button mdl-button--icon" id="nav-open-button">
                             <i class="material-icons">folder_open</i>
                         </button>
+                        <div class="mdl-tooltip" for="nav-open-button">Open project folder</div>
+                    </div>
+                    <div id="nav-files">
+                        <div class="nav-file">Class1</div>
+                        <div class="nav-file nav-file-selected">Class2</div>
+                        <div class="nav-file">Class3</div>
                     </div>
                 </div>
                 <div id="editor"></div>

@@ -5,6 +5,7 @@ import './ui/dialog';
 import './ui/mdlUpgrade';
 // ./ui/ alphabetical order
 import './ui/editor';
+import './ui/fileName';
 import './ui/nav';
 import './ui/projectName';
 import './ui/topBar';

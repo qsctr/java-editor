@@ -1,21 +1,20 @@
 import { remote } from 'electron';
 import { readdirSync } from 'fs';
+import * as projectName from './ui/projectName';
+import * as nav from './ui/nav';
 import snackbar from './ui/snackbar';
 import { isDirectory, isFile } from './utils/exists';
-import safeEmitter from './utils/safeEmitter';
+import * as file from './file';
 
 const dialog = remote.dialog;
 const currentWindow = remote.getCurrentWindow();
 const app = remote.app;
 
-const events = [
-    'newProjectPath',
-    'newProjectName',
-    'newFileNames',
-    'newClassNames'
-];
+let currentProjectPath: string;
 
-export const emitter = new (safeEmitter(events))();
+export function getCurrentProjectPath() {
+    return currentProjectPath;
+}
 
 export function openUsingDialog() {
     const result = dialog.showOpenDialog(currentWindow, {
@@ -33,13 +32,12 @@ export function open(path: string) {
     if (!isDirectory(path)) {
         return snackbar(`${path} is not a valid directory`);
     }
-    const fileNames = readdirSync(path).filter(name => isFile(`${path}/${name}`) && name.slice(-5) === '.java');
-    const classNames = fileNames.map(name => name.slice(0, -5));
-    if (classNames.length === 0) {
+    const fileNames = readdirSync(path).filter(name => isFile(`${path}/${name}`) && name.slice(-5) === '.java').map(name => name.slice(0, -5));
+    if (fileNames.length === 0) {
         return snackbar(`${path} has no Java source files`);
     }
-    emitter.emit('newProjectPath', path);
-    emitter.emit('newProjectName', path.slice(Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\')) + 1));
-    emitter.emit('newFileNames', fileNames);
-    emitter.emit('newClassNames', classNames);
+    currentProjectPath = path;
+    projectName.change(path.slice(Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\')) + 1));
+    nav.updateFiles(fileNames);
+    file.open(fileNames[0]);
 }
